@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinéraire & Carte</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="map-style.css">
+</head>
+<body>
+
+    <div id="timeline-container"></div>
+
+    <div id="panel">
+        <h3>📍 État des lieux</h3>
+
+        <button class="btn-import" onclick="triggerMapImport()">📂 Charger une sauvegarde</button>
+        <input type="file" id="map-file-input" accept=".json" onchange="loadMapFile(this)" style="display:none">
+
+        <div id="trip-details" class="trip-info">Chargement...</div>
+
+        <div id="processing-area">
+            <div id="current-action">Analyse...</div>
+            <div class="progress-bar"><div class="progress-fill" id="p-bar"></div></div>
+        </div>
+
+        <a href="index.html" class="btn-back">← Retour au planning</a>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="map-script.js"></script>
+</body>
+</html>

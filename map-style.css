@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- TIMELINE (Haut) --- */
+#timeline-container {
+    height: 80px;
+    background: #2c3e50;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 2000;
+    flex-shrink: 0;
+}
+
+/* Barre de défilement stylisée */
+#timeline-container::-webkit-scrollbar { height: 8px; }
+#timeline-container::-webkit-scrollbar-thumb { background: #566e85; border-radius: 4px; }
+#timeline-container::-webkit-scrollbar-track { background: #2c3e50; }
+
+.timeline-item {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    color: #bdc3c7;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 80px;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    user-select: none;
+}
+
+.timeline-item:hover { background: rgba(255,255,255,0.2); color: white; }
+
+.timeline-item.active {
+    background: #3498db;
+    color: white;
+    border-color: #5dade2;
+    transform: scale(1.05);
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+.date-day { font-size: 0.8em; text-transform: uppercase; display: block; opacity: 0.8; }
+.date-num { font-size: 1.1em; }
+
+/* --- CARTE --- */
+#map { flex: 1; width: 100%; z-index: 1; }
+
+/* --- PANEL CONTROLE --- */
+#panel {
+    position: absolute;
+    top: 100px; right: 10px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    width: 280px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+h3 { margin-top: 0; color: #2c3e50; font-size: 1.1em; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+
+.progress-bar {
+    height: 6px; background: #eee; margin: 10px 0;
+    width: 100%; border-radius: 3px; overflow: hidden;
+}
+.progress-fill {
+    height: 100%; background: #27ae60; width: 0%; transition: width 0.3s;
+}
+
+.btn-back {
+    display: block; width: 100%; text-decoration: none;
+    color: #333; text-align: center; padding: 10px 0;
+    border: 1px solid #ccc; border-radius: 4px; margin-top: 15px;
+    font-size: 0.9em; background: #f8f9fa; transition: background 0.2s;
+}
+.btn-back:hover { background: #e2e6ea; }
+
+#processing-area {
+    display: none;
+    margin-top: 10px;
+    background: #fdfefe;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+#current-action { font-size: 0.85em; color: #7f8c8d; }
+
+/* Infos Trajet */
+.trip-info {
+    background: #fdfefe;
+    border-left: 4px solid #3498db;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+.btn-import {
+    display: block;
+    width: 100%;
+    background-color: #e67e22; /* Orange */
+    color: white;
+    border: none;
+    padding: 10px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: background 0.2s;
+}
+
+.btn-import:hover {
+    background-color: #d35400;
+}

@@ -24,7 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initCalendar();
     renderPlanner();
-    renderLists();
+    if (typeof renderLists === "function") renderLists();
+
+    // --- AJOUTEZ CETTE LIGNE ICI ---
+    loadDefaultJSON();
 });
 
 // --- Calendrier (inchangé ou presque) ---
@@ -482,4 +485,48 @@ function importData(input) {
 
     // Reset pour pouvoir réimporter le même fichier si besoin
     input.value = '';
+}
+
+// --- CHARGEMENT AUTOMATIQUE DEPUIS LE SERVEUR (GITHUB) ---
+
+async function loadDefaultJSON() {
+    try {
+        console.log("Tentative de chargement du fichier JSON...");
+
+        // 1. On va chercher le fichier.
+        // L'ajout de "?t=" + Date.now() est une astuce pour empêcher le navigateur
+        // de garder une vieille version en cache (force le rechargement).
+        const response = await fetch('planning_sauvegarde.json?t=' + Date.now());
+
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP: ${response.status}`);
+        }
+
+        // 2. On récupère les données
+        const serverData = await response.json();
+
+        // 3. LOGIQUE DE SÉCURITÉ :
+        // On vérifie si les données du serveur sont différentes de celles locales.
+        // Pour faire simple ici : ON ÉCRASE TOUT avec le fichier du serveur.
+        // C'est ce que vous avez demandé (le fichier fait foi).
+
+        appData = serverData;
+
+        // 4. On met à jour l'interface
+        saveToLocal(); // On synchronise aussi le LocalStorage
+        initCalendar();
+        renderPlanner();
+        if (typeof renderLists === "function") renderLists(); // Si vous avez la version avec les listes
+
+        // Petit message discret pour dire que c'est chargé
+        const indicator = document.querySelector('.save-indicator');
+        if (indicator) {
+            indicator.textContent = "Données chargées depuis le fichier JSON ✅";
+            indicator.style.color = "#2ecc71";
+        }
+
+    } catch (error) {
+        console.warn("Aucun fichier 'planning_sauvegarde.json' trouvé ou erreur de lecture.", error);
+        // Ce n'est pas grave, on garde les données du LocalStorage s'il y en a.
+    }
 }

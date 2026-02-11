@@ -64,6 +64,15 @@
           "expanded": false,
           "lat": "48.8591888",
           "lon": "2.3457302"
+        },
+        {
+          "title": "Galerie des Glaces",
+          "place": "Place d'Armes, 78000 Versailles",
+          "desc": "21€",
+          "img": "",
+          "expanded": false,
+          "lat": "48.8038406",
+          "lon": "2.1246463"
         }
       ]
     },
@@ -558,17 +567,5 @@
       "items": []
     }
   ],
-  "2026-02-11": {
-    "Lunch": [
-      {
-        "title": "Galerie des Glaces",
-        "place": "Place d'Armes, 78000 Versailles",
-        "desc": "21€",
-        "img": "",
-        "expanded": false,
-        "lat": "48.8038406",
-        "lon": "2.1246463"
-      }
-    ]
-  }
+  "2026-02-11": {}
 }

@@ -32,6 +32,7 @@
 
         <div class="save-indicator">Sauvegarde auto active</div>
         <div class="io-buttons">
+          <button class="io-btn" style="background-color: #9b59b6;" onclick="syncToGitHub()">☁️ Sauvegarder sur le Cloud</button>
           <button class="io-btn export" onclick="exportData()">💾 Sauvegarder le fichier</button>
           <button class="io-btn import" onclick="triggerImport()">📂 Ouvrir un fichier</button>
           <input type="file" id="import-file" accept=".json" onchange="importData(this)" style="display:none">

@@ -559,3 +559,95 @@ function closeSidebar() {
     if (sidebar) sidebar.classList.remove('open');
     if (overlay) overlay.classList.remove('open');
 }
+
+// --- SYNCHRONISATION CLOUD (GITHUB API) ---
+
+async function syncToGitHub() {
+    // 1. Récupération des identifiants (demandés une seule fois et sauvegardés)
+    let token = localStorage.getItem('gh_token');
+    let repoOwner = localStorage.getItem('gh_owner');
+    let repoName = localStorage.getItem('gh_repo');
+
+    if (!token || !repoOwner || !repoName) {
+        alert("Configuration Cloud initiale requise.");
+        repoOwner = prompt("Quel est votre pseudo GitHub ? (ex: JeanDupont)");
+        if (!repoOwner) return;
+
+        repoName = prompt("Quel est le nom exact du repository ? (ex: mon-planning)");
+        if (!repoName) return;
+
+        token = prompt("Collez votre Personal Access Token (PAT) :");
+        if (!token) return;
+
+        // On sauvegarde pour ne plus le redemander sur cet appareil
+        localStorage.setItem('gh_owner', repoOwner);
+        localStorage.setItem('gh_repo', repoName);
+        localStorage.setItem('gh_token', token);
+    }
+
+    const path = 'planning_sauvegarde.json';
+    const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${path}`;
+
+    // Changer le texte du bouton pour montrer que ça charge
+    const btn = document.querySelector('button[onclick="syncToGitHub()"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = "⏳ Envoi en cours...";
+    btn.disabled = true;
+
+    try {
+        // ÉTAPE 1 : Récupérer le "SHA" actuel du fichier (obligatoire pour GitHub)
+        let sha = "";
+        const getRes = await fetch(apiUrl, {
+            headers: { 'Authorization': `token ${token}` }
+        });
+
+        if (getRes.ok) {
+            const getData = await getRes.json();
+            sha = getData.sha;
+        } else if (getRes.status !== 404) {
+            throw new Error("Erreur lors de la lecture du fichier sur GitHub.");
+        }
+
+        // ÉTAPE 2 : Encoder les données en Base64 (gestion des accents français incluse)
+        const jsonString = JSON.stringify(appData, null, 2);
+        const encodedContent = btoa(unescape(encodeURIComponent(jsonString)));
+
+        // ÉTAPE 3 : Envoyer le nouveau fichier
+        const body = {
+            message: "Sauvegarde Cloud auto depuis l'application ☁️",
+            content: encodedContent,
+            sha: sha || undefined // On donne le SHA si le fichier existait déjà
+        };
+
+        const putRes = await fetch(apiUrl, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+
+        if (putRes.ok) {
+            alert("✅ Sauvegarde Cloud réussie !");
+        } else {
+            const errorData = await putRes.json();
+            alert("❌ Erreur de sauvegarde : " + (errorData.message || "Vérifiez vos identifiants."));
+            // Si l'erreur est liée aux identifiants, on propose de les réinitialiser
+            if (putRes.status === 401 || putRes.status === 404) {
+                if(confirm("Voulez-vous réinitialiser vos identifiants GitHub ?")) {
+                    localStorage.removeItem('gh_token');
+                    localStorage.removeItem('gh_owner');
+                    localStorage.removeItem('gh_repo');
+                }
+            }
+        }
+    } catch (error) {
+        console.error(error);
+        alert("Erreur de connexion à GitHub.");
+    } finally {
+        // Restaurer le bouton
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    }
+}

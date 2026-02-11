@@ -30,6 +30,15 @@
       "collapsed": false,
       "items": [
         {
+          "title": "Galerie des Glaces",
+          "place": "Place d'Armes, 78000 Versailles",
+          "desc": "21€",
+          "img": "",
+          "expanded": false,
+          "lat": "48.8038406",
+          "lon": "2.1246463"
+        },
+        {
           "title": "Musée du Louvre",
           "place": "75001 Paris",
           "desc": "22€",
@@ -558,17 +567,5 @@
       "items": []
     }
   ],
-  "2026-02-11": {
-    "Lunch": [
-      {
-        "title": "Galerie des Glaces",
-        "place": "Place d'Armes, 78000 Versailles",
-        "desc": "21€",
-        "img": "",
-        "expanded": false,
-        "lat": "48.8038406",
-        "lon": "2.1246463"
-      }
-    ]
-  }
+  "2026-02-11": {}
 }

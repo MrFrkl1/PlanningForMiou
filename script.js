@@ -539,11 +539,23 @@ async function loadDefaultJSON() {
 // --- GESTION DU MENU MOBILE ---
 
 function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('open');
-    document.getElementById('mobile-overlay').classList.toggle('open');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('mobile-overlay');
+
+    // Sécurité : si l'ID n'existe pas, on affiche une alerte pour vous prévenir !
+    if (!sidebar) {
+        alert("Erreur : Il manque l'attribut id='sidebar' dans votre fichier HTML !");
+        return;
+    }
+
+    sidebar.classList.toggle('open');
+    if (overlay) overlay.classList.toggle('open');
 }
 
 function closeSidebar() {
-    document.getElementById('sidebar').classList.remove('open');
-    document.getElementById('mobile-overlay').classList.remove('open');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('mobile-overlay');
+
+    if (sidebar) sidebar.classList.remove('open');
+    if (overlay) overlay.classList.remove('open');
 }

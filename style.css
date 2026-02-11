@@ -274,33 +274,68 @@ input[type="file"] { display: none; }
     z-index: 999;
 }
 
-/* Règles appliquées UNIQUEMENT sur téléphone et petite tablette (< 800px) */
+/* --- RESPONSIVE & MENU MOBILE --- */
+
+.main-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 10px;
+}
+
+.main-header h2#current-date-display {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Bouton Hamburger (Caché sur PC) */
+#sidebar-toggle {
+    background: var(--sidebar-bg);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 1.5em;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+
+#sidebar-toggle:hover { background: #3e5871; }
+
+/* Fond noir semi-transparent */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.overlay.open { display: block; }
+
+/* === RÈGLES POUR TÉLÉPHONE (< 800px) === */
 @media (max-width: 800px) {
     #sidebar-toggle {
-        display: block; /* On affiche le bouton menu */
+        display: block; /* On affiche le bouton */
     }
 
     .sidebar {
         position: fixed;
         top: 0;
         bottom: 0;
-        left: -100%; /* Cachée complètement hors de l'écran à gauche */
+        left: -100%; /* Totalement caché à gauche par défaut */
         z-index: 1000;
-        width: 85%; /* Prend 85% de l'écran mobile */
-        max-width: 320px;
-        transition: left 0.3s ease; /* Animation fluide quand ça s'ouvre */
+        width: 85%;
+        max-width: 300px;
+        transition: left 0.3s ease;
         box-shadow: 2px 0 15px rgba(0,0,0,0.5);
+        border-right: none;
     }
 
-    /* Quand la classe 'open' est ajoutée via Javascript */
     .sidebar.open {
-        left: 0; /* La sidebar glisse et apparaît */
+        left: 0; /* Fait glisser le menu dans l'écran */
     }
-
-    .overlay.open {
-        display: block; /* Affiche le fond noir */
-    }
-
-    /* On enlève la bordure droite inutile sur mobile */
-    .sidebar { border-right: none; }
 }

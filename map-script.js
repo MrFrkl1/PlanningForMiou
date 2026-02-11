@@ -284,6 +284,31 @@ function loadMapFile(input) {
     input.value = '';
 }
 
+// --- 8. GESTION DU PANNEAU RÉTRACTABLE ---
+
+function togglePanel() {
+    const content = document.getElementById('panel-content');
+    const icon = document.getElementById('panel-icon');
+    const panel = document.getElementById('panel');
+
+    // Si c'est caché, on affiche
+    if (content.classList.contains('collapsed')) {
+        content.classList.remove('collapsed');
+        panel.classList.remove('is-collapsed');
+        icon.textContent = '▼';
+    } else {
+        // Sinon on cache
+        content.classList.add('collapsed');
+        panel.classList.add('is-collapsed');
+        icon.textContent = '▲';
+    }
+}
+
+// Auto-plier le panneau sur mobile au démarrage
+if (window.innerWidth <= 800) {
+    togglePanel(); // Le plie immédiatement
+}
+
 // --- DÉMARRAGE ---
 // Lance le chargement depuis le serveur/GitHub
 loadDefaultJSON();

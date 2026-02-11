@@ -9,6 +9,7 @@
 </head>
 <body>
 
+    <div id="mobile-overlay" class="overlay" onclick="closeSidebar()"></div>
     <div class="sidebar">
       <a href="map.html" target="_blank" class="map-link-btn">🗺️ Voir la Carte de France</a>
         <div class="calendar-header">
@@ -38,9 +39,14 @@
     </div>
 
     <div class="main-content">
-        <h2 id="current-date-display">Sélectionnez une date</h2>
+      <div class="main-header">
+            <button id="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+            <h2 id="current-date-display">Sélectionnez une date</h2>
+        </div>
+
         <div id="planner-container">
             </div>
+        </div>
     </div>
 
     <script src="script.js"></script>

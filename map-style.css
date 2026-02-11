@@ -128,3 +128,41 @@ h3 { margin-top: 0; color: #2c3e50; font-size: 1.1em; border-bottom: 1px solid #
 .btn-import:hover {
     background-color: #d35400;
 }
+
+/* --- GESTION DU PANNEAU RÉTRACTABLE --- */
+
+#panel h3 {
+    margin: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    user-select: none;
+}
+
+#panel-content {
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+}
+
+/* Classe ajoutée par JS pour cacher le contenu */
+#panel-content.collapsed {
+    display: none;
+}
+
+/* Ligne sous le titre uniquement quand c'est ouvert */
+#panel:not(.is-collapsed) h3 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* --- VUE MOBILE --- */
+@media (max-width: 800px) {
+    #panel {
+        top: auto;        /* On annule la position en haut */
+        bottom: 20px;     /* On le place en bas */
+        left: 10px;       /* Marge à gauche */
+        right: 10px;      /* Marge à droite */
+        width: auto;      /* Il prend toute la largeur disponible */
+        z-index: 3000;    /* Par-dessus la carte */
+        box-shadow: 0 -2px 15px rgba(0,0,0,0.3); /* Ombre vers le haut */
+    }
+}

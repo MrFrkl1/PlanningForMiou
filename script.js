@@ -77,6 +77,11 @@ function selectDate(dateKey, element) {
     document.getElementById('current-date-display').textContent = `Planning du ${dayName} ${d}-${m}-${y}`;
 
     renderPlanner();
+
+    // NOUVEAU : Ferme le menu automatiquement sur mobile après avoir choisi une date
+    if (window.innerWidth <= 800) {
+        closeSidebar();
+    }
 }
 
 // --- LISTES SIDEBAR (Nouveau système) ---
@@ -427,7 +432,7 @@ function exportData() {
     // 4. Créer un lien invisible et cliquer dessus pour lancer le téléchargement
     const link = document.createElement('a');
     link.href = url;
-    link.download = `planning_sauvegarde_${new Date().toISOString().slice(0,10)}.json`;
+    link.download = `planning_sauvegarde.json`;
     document.body.appendChild(link);
     link.click();
 
@@ -529,4 +534,16 @@ async function loadDefaultJSON() {
         console.warn("Aucun fichier 'planning_sauvegarde.json' trouvé ou erreur de lecture.", error);
         // Ce n'est pas grave, on garde les données du LocalStorage s'il y en a.
     }
+}
+
+// --- GESTION DU MENU MOBILE ---
+
+function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('mobile-overlay').classList.toggle('open');
+}
+
+function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('mobile-overlay').classList.remove('open');
 }

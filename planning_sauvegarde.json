@@ -37,48 +37,12 @@
           "expanded": false,
           "lat": "48.8625842",
           "lon": "2.3364289"
-        },
-        {
-          "title": "Zoo Art Show",
-          "place": "4 Pl. de la Défense, 92800 Puteaux",
-          "desc": "12€",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8909612",
-          "lon": "2.2410128"
-        },
-        {
-          "title": "jardin de Versailles",
-          "place": "Place d'Armes, 78000 Versailles",
-          "desc": "11€",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8038406",
-          "lon": "2.1246463"
-        },
-        {
-          "title": "59 Rivoli - Art",
-          "place": "59 Rue de Rivoli, 75001 Paris",
-          "desc": "13-20h",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8591888",
-          "lon": "2.3457302"
-        },
-        {
-          "title": "Galerie des Glaces",
-          "place": "Place d'Armes, 78000 Versailles",
-          "desc": "21€",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8038406",
-          "lon": "2.1246463"
         }
       ]
     },
     {
       "name": "Restaurants",
-      "collapsed": true,
+      "collapsed": false,
       "items": [
         {
           "title": "Restaurant de l'UNESCO",
@@ -216,15 +180,6 @@
           "lon": "2.3422025"
         },
         {
-          "title": "아빠 키친 - Appa Kitchen",
-          "place": "69 Rue Broca, 75013 Paris",
-          "desc": "",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8369271",
-          "lon": "2.3469920"
-        },
-        {
           "title": "Olive Chicken",
           "place": "6 Rue Poinsot, 75014 Paris",
           "desc": "Le poulet est délicieux",
@@ -237,7 +192,7 @@
     },
     {
       "name": "Visites",
-      "collapsed": true,
+      "collapsed": false,
       "items": [
         {
           "title": "Basilique du Sacré-Cœur de Montmartre",
@@ -256,49 +211,13 @@
           "expanded": false,
           "lat": "48.8426205",
           "lon": "2.3217471"
-        },
-        {
-          "title": "Cathédrale Notre-Dame de Paris",
-          "place": "6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris",
-          "desc": "Réserver les billets - 60€+",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8529371",
-          "lon": "2.3500501"
         }
       ]
     },
     {
       "name": "Balade",
-      "collapsed": true,
+      "collapsed": false,
       "items": [
-        {
-          "title": "Espl. du Trocadéro",
-          "place": "Espl. du Trocadéro",
-          "desc": "",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8619948",
-          "lon": "2.2887325"
-        },
-        {
-          "title": "Tour Eiffel",
-          "place": "Av. Gustave Eiffel, 75007 Paris",
-          "desc": "14€ pour monter",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8581265",
-          "lon": "2.2956641"
-        },
-        {
-          "title": "Jardin des Tuileries",
-          "place": "75001 Paris",
-          "desc": "Jardin ",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8625842",
-          "lon": "2.3364289"
-        },
         {
           "title": "La Gare - Le Gore",
           "place": "1 Av. Corentin Cariou, 75019 Paris",
@@ -318,24 +237,6 @@
           "lon": "2.3838922"
         },
         {
-          "title": "Rue Galerie",
-          "place": "Cour du Commerce Saint-André",
-          "desc": "",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8527346",
-          "lon": "2.3391114"
-        },
-        {
-          "title": "Jardin du Luxembourg",
-          "place": "R8WP+JG Paris",
-          "desc": "Must",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8493765",
-          "lon": "2.3322544"
-        },
-        {
           "title": "Le mur des je t'aime",
           "place": "14 Place des Abbesses, 75018 Paris",
           "desc": "",
@@ -348,7 +249,7 @@
     },
     {
       "name": "Bar/Café",
-      "collapsed": true,
+      "collapsed": false,
       "items": [
         {
           "title": "Café Pli - Temple",
@@ -387,15 +288,6 @@
           "lon": "2.3599971"
         },
         {
-          "title": "Rockstar Café",
-          "place": "46 Bd Voltaire, 75011 Paris",
-          "desc": "Nord Bastille",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8633287",
-          "lon": "2.3705352"
-        },
-        {
           "title": "No Entry",
           "place": "20 bis Rue de Douai, 75009 Paris",
           "desc": "Monmartre",
@@ -430,15 +322,6 @@
           "expanded": false,
           "lat": "48.8893798",
           "lon": "2.4132537"
-        },
-        {
-          "title": "Les Cuves de Fauve",
-          "place": "64 Rue de Charonne, 75011 Paris",
-          "desc": "Bastille",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8532961",
-          "lon": "2.3791345"
         },
         {
           "title": "Umami Matcha Café",
@@ -498,7 +381,7 @@
     },
     {
       "name": "Snack/Boulangerie",
-      "collapsed": true,
+      "collapsed": false,
       "items": [
         {
           "title": "Enzo & Lily",
@@ -544,15 +427,6 @@
           "expanded": false,
           "lat": "48.8677787",
           "lon": "2.3333222"
-        },
-        {
-          "title": "Baguett. by Maison Kayser",
-          "place": "33 Rue Coquillière, 75001 Paris",
-          "desc": "",
-          "img": "",
-          "expanded": false,
-          "lat": "48.8643259",
-          "lon": "2.3412468"
         }
       ]
     },
@@ -567,5 +441,223 @@
       "items": []
     }
   ],
-  "2026-02-11": {}
+  "2026-02-27": {
+    "Evening": [
+      {
+        "title": "Climbing district",
+        "place": "166 avenue Charles de Gaulle, 92200 Neuilly-sur-Seine",
+        "desc": "",
+        "img": "",
+        "expanded": false
+      }
+    ]
+  },
+  "2026-02-28": {
+    "Evening": [],
+    "Dinner": [
+      {
+        "title": "repas famille",
+        "place": "75 rue Jules Ferry, 91430 Igny",
+        "desc": "",
+        "img": "",
+        "expanded": false
+      }
+    ]
+  },
+  "2026-03-03": {
+    "Dinner": [
+      {
+        "title": "Sam Sun 삼순",
+        "place": "41 Rue de Richelieu, 75001 Paris",
+        "desc": "",
+        "img": "",
+        "expanded": false
+      }
+    ],
+    "Breakfast": [],
+    "Morning": [
+      {
+        "title": "Jardin du Luxembourg",
+        "place": "R8WP+JG Paris",
+        "desc": "Must",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8493765",
+        "lon": "2.3322544"
+      },
+      {
+        "title": "Rue Galerie",
+        "place": "Cour du Commerce Saint-André",
+        "desc": "",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8527346",
+        "lon": "2.3391114"
+      },
+      {
+        "title": "Cathédrale Notre-Dame de Paris",
+        "place": "6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris",
+        "desc": "Réserver les billets - 60€+",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8529371",
+        "lon": "2.3500501"
+      }
+    ],
+    "Afternoon": [
+      {
+        "title": "59 Rivoli - Art",
+        "place": "59 Rue de Rivoli, 75001 Paris",
+        "desc": "13-20h",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8591888",
+        "lon": "2.3457302"
+      },
+      {
+        "title": "Baguett. by Maison Kayser",
+        "place": "33 Rue Coquillière, 75001 Paris",
+        "desc": "",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8643259",
+        "lon": "2.3412468"
+      },
+      {
+        "title": "Jardin des Tuileries",
+        "place": "75001 Paris",
+        "desc": "Jardin ",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8625842",
+        "lon": "2.3364289"
+      }
+    ]
+  },
+  "2026-03-05": {
+    "Dinner": [
+      {
+        "title": "Repas Tristan Camille ",
+        "place": "226 rue Jean-Baptiste Charcot, 92400 Courbevoie",
+        "desc": "",
+        "img": "",
+        "expanded": false
+      }
+    ],
+    "Afternoon": [
+      {
+        "title": "Zoo Art Show",
+        "place": "4 Pl. de la Défense, 92800 Puteaux",
+        "desc": "12€",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8909612",
+        "lon": "2.2410128"
+      }
+    ]
+  },
+  "2026-03-06": {
+    "Evening": [
+      {
+        "title": "GDI",
+        "place": "3 Av. de Paris, 78000 Versailles",
+        "desc": "",
+        "img": "",
+        "expanded": false
+      }
+    ],
+    "Morning": [
+      {
+        "title": "Galerie des Glaces",
+        "place": "Place d'Armes, 78000 Versailles",
+        "desc": "21€",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8038406",
+        "lon": "2.1246463"
+      }
+    ],
+    "Afternoon": [
+      {
+        "title": "jardin de Versailles",
+        "place": "Place d'Armes, 78000 Versailles",
+        "desc": "11€",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8038406",
+        "lon": "2.1246463"
+      }
+    ]
+  },
+  "2026-03-02": {
+    "Breakfast": [],
+    "Morning": [],
+    "Evening": [
+      {
+        "title": "Le Froggy",
+        "place": "26 Rue de Lappe, 75011 Paris",
+        "desc": "",
+        "img": "",
+        "expanded": false
+      },
+      {
+        "title": "Les Cuves de Fauve",
+        "place": "64 Rue de Charonne, 75011 Paris",
+        "desc": "Bastille",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8532961",
+        "lon": "2.3791345"
+      },
+      {
+        "title": "Rockstar Café",
+        "place": "46 Bd Voltaire, 75011 Paris",
+        "desc": "Nord Bastille",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8633287",
+        "lon": "2.3705352"
+      }
+    ],
+    "Afternoon": [
+      {
+        "title": "Tour Eiffel",
+        "place": "Av. Gustave Eiffel, 75007 Paris",
+        "desc": "14€ pour monter",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8581265",
+        "lon": "2.2956641"
+      },
+      {
+        "title": "Espl. du Trocadéro",
+        "place": "Espl. du Trocadéro",
+        "desc": "",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8619948",
+        "lon": "2.2887325"
+      }
+    ],
+    "Lunch": [
+      {
+        "title": "아빠 키친 - Appa Kitchen",
+        "place": "69 Rue Broca, 75013 Paris",
+        "desc": "",
+        "img": "",
+        "expanded": false,
+        "lat": "48.8369271",
+        "lon": "2.3469920"
+      }
+    ],
+    "Dinner": [
+      {
+        "title": "SOBERANO",
+        "place": "14 Rue de la Roquette, 75011 Paris",
+        "desc": "",
+        "img": "",
+        "expanded": false
+      }
+    ]
+  }
 }
